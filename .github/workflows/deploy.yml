@@ -49,9 +49,12 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      # 3. 安装依赖 (使用 npm install 代替 npm ci 以避免可选依赖 bug)
+      # 3. 安装依赖
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          # 强制安装 lightningcss Linux 二进制文件
+          npm install lightningcss-linux-x64-gnu --save-optional
 
       # 4. 运行 ESLint 检查
       - name: Run ESLint
