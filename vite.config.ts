@@ -6,7 +6,7 @@ import path from 'path'
 export default defineConfig({
   // GitHub Pages 部署配置
   // 如果使用自定义域名，可以设置为 '/'
-  base: process.env.NODE_ENV === 'production' ? '/my-react-app/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/levy-react-blog/' : '/',
   plugins: [react()],
   resolve: {
     alias: {
@@ -24,7 +24,11 @@ export default defineConfig({
         manualChunks: {
           // 将第三方库单独打包
           vendor: ['react', 'react-dom', 'react-router-dom'],
-          ui: ['framer-motion', '@radix-ui/react-dialog', '@radix-ui/react-tabs'],
+          ui: [
+            'framer-motion',
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-tabs',
+          ],
           animation: ['gsap', '@gsap/react', 'three', '@react-three/fiber'],
         },
       },

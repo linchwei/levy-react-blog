@@ -96,6 +96,7 @@ export default defineConfig({
 ### 1. 获取 API 密钥
 
 #### DeepSeek（推荐）
+
 1. 访问 [DeepSeek 开放平台](https://platform.deepseek.com/)
 2. 注册并登录账号
 3. 进入 **API Keys** 页面
@@ -103,11 +104,13 @@ export default defineConfig({
 5. 复制生成的密钥
 
 #### 智谱 GLM（备选）
+
 1. 访问 [智谱 AI 开放平台](https://open.bigmodel.cn/)
 2. 注册并登录账号
 3. 获取 API Key
 
 #### 通义千问（备选）
+
 1. 访问 [阿里云 DashScope](https://dashscope.aliyun.com/)
 2. 注册并登录阿里云账号
 3. 创建 API Key
@@ -120,12 +123,12 @@ export default defineConfig({
 4. 点击 **New repository secret**
 5. 添加以下 Secrets：
 
-| Secret 名称 | 说明 | 示例值 |
-|------------|------|--------|
-| `VITE_DEEPSEEK_API_KEY` | DeepSeek API 密钥 | `sk-xxxxxxxxxxxxx` |
-| `VITE_DEEPSEEK_API_URL` | DeepSeek API 地址 | `https://api.deepseek.com/v1` |
-| `VITE_ZHIPU_API_KEY` | 智谱 GLM API 密钥（可选） | `your_zhipu_key` |
-| `VITE_QWEN_API_KEY` | 通义千问 API 密钥（可选） | `your_qwen_key` |
+| Secret 名称             | 说明                      | 示例值                        |
+| ----------------------- | ------------------------- | ----------------------------- |
+| `VITE_DEEPSEEK_API_KEY` | DeepSeek API 密钥         | `sk-xxxxxxxxxxxxx`            |
+| `VITE_DEEPSEEK_API_URL` | DeepSeek API 地址         | `https://api.deepseek.com/v1` |
+| `VITE_ZHIPU_API_KEY`    | 智谱 GLM API 密钥（可选） | `your_zhipu_key`              |
+| `VITE_QWEN_API_KEY`     | 通义千问 API 密钥（可选） | `your_qwen_key`               |
 
 ⚠️ **注意**: 至少配置一个 API 密钥即可使用 AI 功能。系统会自动降级，优先使用 DeepSeek，如果失败则切换到智谱GLM，最后切换到通义千问。
 
@@ -138,6 +141,7 @@ export default defineConfig({
 ### 部署触发条件
 
 以下文件变更会触发自动部署：
+
 - `src/**` - 源代码文件
 - `public/**` - 静态资源
 - `package.json` - 依赖配置
@@ -213,13 +217,13 @@ npm run deploy:gh-pages
 
 在你的域名服务商处添加以下 DNS 记录：
 
-| 类型 | 主机记录 | 记录值 |
-|------|---------|--------|
-| CNAME | www | YOUR_USERNAME.github.io |
-| A | @ | 185.199.108.153 |
-| A | @ | 185.199.109.153 |
-| A | @ | 185.199.110.153 |
-| A | @ | 185.199.111.153 |
+| 类型  | 主机记录 | 记录值                  |
+| ----- | -------- | ----------------------- |
+| CNAME | www      | YOUR_USERNAME.github.io |
+| A     | @        | 185.199.108.153         |
+| A     | @        | 185.199.109.153         |
+| A     | @        | 185.199.110.153         |
+| A     | @        | 185.199.111.153         |
 
 ### 2. 创建 CNAME 文件
 
@@ -235,7 +239,7 @@ echo "www.yourdomain.com" > public/CNAME
 
 ```typescript
 export default defineConfig({
-  base: '/',  // 使用自定义域名时设置为 '/'
+  base: '/', // 使用自定义域名时设置为 '/'
   // ... 其他配置
 })
 ```
@@ -257,6 +261,7 @@ export default defineConfig({
 **原因**: `base` 路径配置不正确
 
 **解决方法**:
+
 1. 检查 `vite.config.ts` 中的 `base` 配置
 2. 确保与仓库名称一致
 3. 重新部署
@@ -266,6 +271,7 @@ export default defineConfig({
 **原因**: API 密钥未配置或配置错误
 
 **解决方法**:
+
 1. 检查 GitHub Secrets 中是否正确配置了 `VITE_DEEPSEEK_API_KEY`
 2. 检查 API 密钥是否有效（可以在本地测试）
 3. 查看浏览器控制台是否有错误信息
@@ -275,6 +281,7 @@ export default defineConfig({
 **原因**: GitHub Actions 权限不足
 
 **解决方法**:
+
 1. 进入 **Settings** → **Actions** → **General**
 2. 确保 **Workflow permissions** 设置为 **Read and write permissions**
 
@@ -283,6 +290,7 @@ export default defineConfig({
 **原因**: 资源路径问题
 
 **解决方法**:
+
 1. 检查 `vite.config.ts` 中的 `base` 配置
 2. 确保所有资源引用使用相对路径
 3. 检查 `index.html` 中的资源引用
@@ -292,6 +300,7 @@ export default defineConfig({
 **原因**: 浏览器缓存
 
 **解决方法**:
+
 1. 强制刷新页面（Ctrl + F5 或 Cmd + Shift + R）
 2. 清除浏览器缓存
 3. 检查 GitHub Pages 是否已更新（可能需要几分钟）
@@ -307,7 +316,7 @@ export default defineConfig({
 ```yaml
 on:
   push:
-    branches: ['gh-pages']  # 修改为你想要的分支
+    branches: ['gh-pages'] # 修改为你想要的分支
 ```
 
 ### 添加部署通知
