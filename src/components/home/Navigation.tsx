@@ -20,6 +20,7 @@ const navItems = [
   { label: '首页', href: '/' },
   { label: '文章', href: '/blog' },
   { label: '项目', href: '/projects' },
+  { label: '热门', href: '/trending' },
   { label: '待办', href: '/todo' },
   { label: '时间线', href: '/timeline' },
   { label: '仪表盘', href: '/dashboard' },

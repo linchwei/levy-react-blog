@@ -85,6 +85,9 @@ const CertificationsPage = lazy(() =>
 const GalleryPage = lazy(() =>
   import('@/pages/GalleryPage').then(m => ({ default: m.GalleryPage }))
 )
+const TrendingPage = lazy(() =>
+  import('@/pages/TrendingPage').then(m => ({ default: m.TrendingPage }))
+)
 
 /**
  * 带 Suspense 的路由包装器
@@ -294,6 +297,14 @@ function App() {
           element={
             <SuspenseRoute>
               <GalleryPage />
+            </SuspenseRoute>
+          }
+        />
+        <Route
+          path="/trending"
+          element={
+            <SuspenseRoute>
+              <TrendingPage />
             </SuspenseRoute>
           }
         />
