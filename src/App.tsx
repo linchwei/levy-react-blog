@@ -88,6 +88,39 @@ const GalleryPage = lazy(() =>
 const TrendingPage = lazy(() =>
   import('@/pages/TrendingPage').then(m => ({ default: m.TrendingPage }))
 )
+const SnakePage = lazy(() =>
+  import('@/pages/SnakePage').then(m => ({ default: m.SnakePage }))
+)
+const TetrisPage = lazy(() =>
+  import('@/pages/TetrisPage').then(m => ({ default: m.TetrisPage }))
+)
+const Game2048Page = lazy(() =>
+  import('@/pages/Game2048Page').then(m => ({ default: m.Game2048Page }))
+)
+const MemoryPage = lazy(() =>
+  import('@/pages/MemoryPage').then(m => ({ default: m.MemoryPage }))
+)
+const BreakoutPage = lazy(() =>
+  import('@/pages/BreakoutPage').then(m => ({ default: m.BreakoutPage }))
+)
+const GamesPage = lazy(() =>
+  import('@/pages/GamesPage').then(m => ({ default: m.GamesPage }))
+)
+const MinesweeperPage = lazy(() =>
+  import('@/pages/MinesweeperPage').then(m => ({ default: m.MinesweeperPage }))
+)
+const GomokuPage = lazy(() =>
+  import('@/pages/GomokuPage').then(m => ({ default: m.GomokuPage }))
+)
+const AircraftPage = lazy(() =>
+  import('@/pages/AircraftPage').then(m => ({ default: m.AircraftPage }))
+)
+const KlotskiPage = lazy(() =>
+  import('@/pages/KlotskiPage').then(m => ({ default: m.KlotskiPage }))
+)
+const PinballPage = lazy(() =>
+  import('@/pages/PinballPage').then(m => ({ default: m.PinballPage }))
+)
 
 /**
  * 带 Suspense 的路由包装器
@@ -305,6 +338,94 @@ function App() {
           element={
             <SuspenseRoute>
               <TrendingPage />
+            </SuspenseRoute>
+          }
+        />
+        <Route
+          path="/games/snake"
+          element={
+            <SuspenseRoute>
+              <SnakePage />
+            </SuspenseRoute>
+          }
+        />
+        <Route
+          path="/games/tetris"
+          element={
+            <SuspenseRoute>
+              <TetrisPage />
+            </SuspenseRoute>
+          }
+        />
+        <Route
+          path="/games/2048"
+          element={
+            <SuspenseRoute>
+              <Game2048Page />
+            </SuspenseRoute>
+          }
+        />
+        <Route
+          path="/games/memory"
+          element={
+            <SuspenseRoute>
+              <MemoryPage />
+            </SuspenseRoute>
+          }
+        />
+        <Route
+          path="/games/breakout"
+          element={
+            <SuspenseRoute>
+              <BreakoutPage />
+            </SuspenseRoute>
+          }
+        />
+        <Route
+          path="/games"
+          element={
+            <SuspenseRoute>
+              <GamesPage />
+            </SuspenseRoute>
+          }
+        />
+        <Route
+          path="/games/minesweeper"
+          element={
+            <SuspenseRoute>
+              <MinesweeperPage />
+            </SuspenseRoute>
+          }
+        />
+        <Route
+          path="/games/gomoku"
+          element={
+            <SuspenseRoute>
+              <GomokuPage />
+            </SuspenseRoute>
+          }
+        />
+        <Route
+          path="/games/aircraft"
+          element={
+            <SuspenseRoute>
+              <AircraftPage />
+            </SuspenseRoute>
+          }
+        />
+        <Route
+          path="/games/klotski"
+          element={
+            <SuspenseRoute>
+              <KlotskiPage />
+            </SuspenseRoute>
+          }
+        />
+        <Route
+          path="/games/pinball"
+          element={
+            <SuspenseRoute>
+              <PinballPage />
             </SuspenseRoute>
           }
         />

@@ -70,11 +70,75 @@ const toolItems = [
   },
 ]
 
+const gameItems = [
+  {
+    name: '贪吃蛇',
+    path: '/games/snake',
+    icon: '🐍',
+    color: 'from-green-500 to-emerald-500',
+  },
+  {
+    name: '俄罗斯方块',
+    path: '/games/tetris',
+    icon: '🧱',
+    color: 'from-blue-500 to-cyan-500',
+  },
+  {
+    name: '2048',
+    path: '/games/2048',
+    icon: '🔢',
+    color: 'from-orange-500 to-amber-500',
+  },
+  {
+    name: '记忆翻牌',
+    path: '/games/memory',
+    icon: '🃏',
+    color: 'from-purple-500 to-pink-500',
+  },
+  {
+    name: '打砖块',
+    path: '/games/breakout',
+    icon: '🏓',
+    color: 'from-red-500 to-rose-500',
+  },
+  {
+    name: '扫雷',
+    path: '/games/minesweeper',
+    icon: '💣',
+    color: 'from-gray-500 to-slate-500',
+  },
+  {
+    name: '五子棋',
+    path: '/games/gomoku',
+    icon: '⚫⚪',
+    color: 'from-amber-500 to-yellow-500',
+  },
+  {
+    name: '飞机大战',
+    path: '/games/aircraft',
+    icon: '✈️',
+    color: 'from-blue-500 to-cyan-500',
+  },
+  {
+    name: '数字华容道',
+    path: '/games/klotski',
+    icon: '🧩',
+    color: 'from-emerald-500 to-teal-500',
+  },
+  {
+    name: '弹球',
+    path: '/games/pinball',
+    icon: '🏓',
+    color: 'from-purple-500 to-pink-500',
+  },
+]
+
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isDark, setIsDark] = useState(true)
   const [isToolsOpen, setIsToolsOpen] = useState(false)
+  const [isGamesOpen, setIsGamesOpen] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
@@ -212,6 +276,82 @@ export function Navigation() {
                             className="flex items-center justify-center gap-2 p-2 text-xs text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors"
                           >
                             <span>查看全部工具</span>
+                          </Link>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Games Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => setIsGamesOpen(true)}
+                onMouseLeave={() => setIsGamesOpen(false)}
+              >
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className={`relative flex items-center gap-1 ${
+                    location.pathname.startsWith('/games')
+                      ? 'text-foreground'
+                      : 'text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  {location.pathname.startsWith('/games') && (
+                    <motion.div
+                      layoutId="activeNav"
+                      className="absolute inset-0 bg-accent rounded-md"
+                      transition={{
+                        type: 'spring',
+                        bounce: 0.2,
+                        duration: 0.6,
+                      }}
+                    />
+                  )}
+                  <span className="relative z-10 flex items-center gap-1">
+                    游戏
+                    <ChevronDown
+                      className={`w-3 h-3 transition-transform duration-200 ${isGamesOpen ? 'rotate-180' : ''}`}
+                    />
+                  </span>
+                </Button>
+
+                <AnimatePresence>
+                  {isGamesOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 mt-2 w-56 z-50"
+                    >
+                      <div className="bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+                        <div className="p-2 space-y-1">
+                          {gameItems.map(game => (
+                            <Link
+                              key={game.path}
+                              to={game.path}
+                              className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all group"
+                            >
+                              <div
+                                className={`w-8 h-8 rounded-lg bg-gradient-to-r ${game.color} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform`}
+                              >
+                                <span className="text-lg">{game.icon}</span>
+                              </div>
+                              <span className="text-sm font-medium text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">
+                                {game.name}
+                              </span>
+                            </Link>
+                          ))}
+                        </div>
+                        <div className="p-2 border-t border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50">
+                          <Link
+                            to="/games"
+                            className="flex items-center justify-center gap-2 p-2 text-xs text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors"
+                          >
+                            <span>查看全部游戏</span>
                           </Link>
                         </div>
                       </div>
