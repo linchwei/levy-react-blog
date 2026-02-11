@@ -1,42 +1,303 @@
 [
   {
     "id": "1",
+    "slug": "personal-blog-system",
     "title": "个人博客系统",
-    "description": "使用React + TypeScript + Tailwind CSS构建的现代化博客系统，支持文章管理、标签分类、深色模式等功能。",
-    "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800",
+    "summary": "使用 React + TypeScript + Tailwind CSS 构建的现代化博客系统，支持文章管理、标签分类、深色模式等功能。",
+    "description": "这是一个功能完善的个人博客系统，采用现代化的前端技术栈构建。系统支持 Markdown 文章编写、标签分类、全文搜索、深色模式切换等功能。通过性能优化，首屏加载时间控制在 1 秒以内， Lighthouse 评分达到 95+。",
+    "coverImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800",
+      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800",
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800"
+    ],
     "tags": ["React", "TypeScript", "Tailwind CSS", "Vite"],
     "demoUrl": "https://blog-demo.example.com",
     "repoUrl": "https://github.com/example/blog",
-    "featured": true
+    "featured": true,
+    "stars": 128,
+    "forks": 32,
+    "techStack": [
+      {
+        "category": "frontend",
+        "items": ["React 19", "TypeScript", "Tailwind CSS v4", "Framer Motion", "shadcn/ui"]
+      },
+      {
+        "category": "backend",
+        "items": ["Node.js", "Express", "PostgreSQL"]
+      },
+      {
+        "category": "devops",
+        "items": ["Docker", "GitHub Actions", "Vercel"]
+      }
+    ],
+    "architecture": {
+      "diagram": "graph TD\n    A[用户浏览器] -->|HTTP/HTTPS| B[CDN]\n    B --> C[Nginx]\n    C --> D[前端应用]\n    D -->|API 请求| E[后端服务]\n    E --> F[(PostgreSQL)]\n    E --> G[(Redis)]\n    D --> H[静态资源存储]",
+      "description": "采用前后端分离架构，前端使用 React 构建单页应用，通过 RESTful API 与后端通信。使用 CDN 加速静态资源，Redis 缓存热点数据，PostgreSQL 存储业务数据。"
+    },
+    "myRole": "全栈开发工程师 / 项目负责人",
+    "contributions": [
+      "负责整体架构设计和技术选型",
+      "实现文章管理系统的核心功能",
+      "优化首屏加载性能，FCP 从 2.5s 降至 0.8s",
+      "设计并实现深色模式切换方案",
+      "搭建 CI/CD 自动化部署流程"
+    ],
+    "teamSize": 1,
+    "duration": "2024.01 - 2024.03",
+    "metrics": [
+      {
+        "label": "首屏加载时间",
+        "value": "0.8s",
+        "before": "2.5s",
+        "after": "0.8s"
+      },
+      {
+        "label": "Lighthouse 评分",
+        "value": "95+",
+        "unit": "分"
+      },
+      {
+        "label": "GitHub Stars",
+        "value": "128",
+        "unit": "stars"
+      }
+    ],
+    "challenges": [
+      {
+        "title": "首屏性能优化",
+        "description": "初始加载时间过长，用户体验不佳，需要优化首屏渲染性能",
+        "solution": "采用代码分割、懒加载、图片优化、Service Worker 缓存等策略，结合骨架屏提升感知性能",
+        "technologies": ["React.lazy", "Intersection Observer", "Workbox", "Sharp"]
+      },
+      {
+        "title": "深色模式实现",
+        "description": "需要实现无缝的深色模式切换，并支持跟随系统主题",
+        "solution": "使用 CSS 变量定义主题色，结合 localStorage 持久化用户偏好，使用 matchMedia API 监听系统主题变化",
+        "technologies": ["CSS Variables", "Tailwind Dark Mode", "matchMedia API"]
+      }
+    ]
   },
   {
     "id": "2",
+    "slug": "ai-code-assistant",
     "title": "AI代码助手",
-    "description": "基于大语言模型的智能编程助手，支持代码补全、错误诊断、重构建议等功能。",
-    "image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800",
+    "summary": "基于大语言模型的智能编程助手，支持代码补全、错误诊断、重构建议等功能。",
+    "description": "AI 代码助手是一款基于 GPT-4 和 CodeLlama 的智能编程工具，提供实时代码补全、智能错误诊断、代码重构建议等功能。支持 20+ 编程语言，每日服务超过 10 万开发者。",
+    "coverImage": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800",
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800"
+    ],
     "tags": ["Python", "FastAPI", "OpenAI", "Redis"],
     "demoUrl": "https://ai-coder.example.com",
     "repoUrl": "https://github.com/example/ai-coder",
-    "featured": true
+    "featured": true,
+    "stars": 520,
+    "forks": 89,
+    "downloads": "50k+/月",
+    "techStack": [
+      {
+        "category": "backend",
+        "items": ["Python", "FastAPI", "Celery", "PostgreSQL"]
+      },
+      {
+        "category": "ai",
+        "items": ["OpenAI GPT-4", "CodeLlama", "LangChain", "Vector DB"]
+      },
+      {
+        "category": "devops",
+        "items": ["Docker", "Kubernetes", "Prometheus", "Grafana"]
+      }
+    ],
+    "architecture": {
+      "diagram": "graph LR\n    A[VS Code 插件] -->|WebSocket| B[API Gateway]\n    B --> C[FastAPI 服务]\n    C --> D[Redis 队列]\n    D --> E[Celery Worker]\n    E --> F[OpenAI API]\n    E --> G[CodeLlama]\n    C --> H[(PostgreSQL)]\n    C --> I[Vector DB]",
+      "description": "采用微服务架构，VS Code 插件通过 WebSocket 与后端实时通信。使用 Celery 处理异步任务，Vector DB 存储代码向量用于相似度搜索。"
+    },
+    "myRole": "后端架构师 / AI 工程师",
+    "contributions": [
+      "设计并实现核心 API 架构",
+      "集成 OpenAI 和 CodeLlama 模型",
+      "实现代码向量检索系统",
+      "优化响应延迟，平均响应时间 < 500ms",
+      "搭建监控和告警系统"
+    ],
+    "teamSize": 5,
+    "duration": "2023.06 - 2023.12",
+    "metrics": [
+      {
+        "label": "平均响应时间",
+        "value": "450ms",
+        "before": "1200ms",
+        "after": "450ms"
+      },
+      {
+        "label": "日活跃用户",
+        "value": "10万+",
+        "unit": "DAU"
+      },
+      {
+        "label": "代码建议采纳率",
+        "value": "78%",
+        "unit": "%"
+      }
+    ],
+    "challenges": [
+      {
+        "title": "大模型响应延迟优化",
+        "description": "GPT-4 API 响应时间较长，影响用户体验",
+        "solution": "实现流式响应、智能缓存、请求合并等策略，使用 Redis 缓存常见代码片段的补全结果",
+        "technologies": ["Streaming Response", "Redis", "Circuit Breaker", "Rate Limiting"]
+      },
+      {
+        "title": "代码上下文理解",
+        "description": "需要理解项目级别的代码上下文，提供准确的建议",
+        "solution": "使用 Tree-sitter 解析代码 AST，构建代码知识图谱，结合 Vector DB 实现语义搜索",
+        "technologies": ["Tree-sitter", "Vector DB", "LangChain", "RAG"]
+      }
+    ]
   },
   {
     "id": "3",
+    "slug": "design-system",
     "title": "设计系统组件库",
-    "description": "一套完整的企业级UI组件库，包含50+组件，支持主题定制和暗色模式。",
-    "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
+    "summary": "一套完整的企业级UI组件库，包含50+组件，支持主题定制和暗色模式。",
+    "description": "为企业级应用打造的设计系统，包含 50+ 高质量组件，完整的文档和示例。支持主题定制、暗色模式、无障碍访问，已被 30+ 项目采用。",
+    "coverImage": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
+      "https://images.unsplash.com/photo-1545235617-9465d2a55698?w=800",
+      "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800"
+    ],
     "tags": ["Vue 3", "TypeScript", "Storybook", "Vite"],
     "demoUrl": "https://design-system.example.com",
     "repoUrl": "https://github.com/example/design-system",
-    "featured": true
+    "featured": true,
+    "stars": 890,
+    "forks": 156,
+    "downloads": "100k+/月",
+    "techStack": [
+      {
+        "category": "frontend",
+        "items": ["Vue 3", "TypeScript", "Vite", "PostCSS"]
+      },
+      {
+        "category": "engineering",
+        "items": ["Storybook", "Vitest", "Playwright", "Changesets"]
+      }
+    ],
+    "architecture": {
+      "diagram": "graph TD\n    A[组件源码] --> B[构建工具]\n    B --> C[ES Module]\n    B --> D[UMD Bundle]\n    B --> E[CSS 样式]\n    C --> F[Tree Shaking]\n    D --> G[CDN 分发]\n    A --> H[Storybook 文档]\n    A --> I[测试套件]",
+      "description": "采用 Monorepo 架构管理多个包，支持 ES Module 和 UMD 两种格式输出。使用 Changesets 管理版本发布，Storybook 提供组件文档和交互示例。"
+    },
+    "myRole": "前端架构师 / 组件库负责人",
+    "contributions": [
+      "设计组件库整体架构和 API 规范",
+      "开发 30+ 核心组件",
+      "搭建自动化测试和文档系统",
+      "制定组件开发规范和最佳实践",
+      "推动组件库在团队内的落地应用"
+    ],
+    "teamSize": 4,
+    "duration": "2023.01 - 2023.08",
+    "metrics": [
+      {
+        "label": "组件数量",
+        "value": "50+",
+        "unit": "个"
+      },
+      {
+        "label": "测试覆盖率",
+        "value": "92%",
+        "unit": "%"
+      },
+      {
+        "label": "采用项目数",
+        "value": "30+",
+        "unit": "个"
+      }
+    ],
+    "challenges": [
+      {
+        "title": "组件 API 设计一致性",
+        "description": "需要确保 50+ 组件的 API 设计保持一致性和可预测性",
+        "solution": "制定详细的 API 设计规范，使用 TypeScript 严格类型约束，建立组件评审机制",
+        "technologies": ["TypeScript", "Design Tokens", "API Design Guidelines"]
+      },
+      {
+        "title": "主题定制系统",
+        "description": "需要支持灵活的主题定制，同时保持类型安全",
+        "solution": "使用 CSS 变量 + Design Tokens 方案，结合 TypeScript 类型推导实现类型安全的主题配置",
+        "technologies": ["CSS Variables", "Design Tokens", "TypeScript Generics"]
+      }
+    ]
   },
   {
     "id": "4",
+    "slug": "realtime-whiteboard",
     "title": "实时协作白板",
-    "description": "支持多人实时协作的在线白板工具，可用于头脑风暴、流程图绘制等场景。",
-    "image": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800",
+    "summary": "支持多人实时协作的在线白板工具，可用于头脑风暴、流程图绘制等场景。",
+    "description": "一款支持多人实时协作的在线白板工具，提供丰富的图形绘制功能、实时光标同步、语音聊天等功能。使用 WebSocket 实现低延迟同步，支持千人同时在线协作。",
+    "coverImage": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800",
+      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800"
+    ],
     "tags": ["React", "WebSocket", "Canvas", "Node.js"],
     "demoUrl": "https://whiteboard.example.com",
     "repoUrl": "https://github.com/example/whiteboard",
-    "featured": false
+    "featured": false,
+    "stars": 245,
+    "forks": 45,
+    "techStack": [
+      {
+        "category": "frontend",
+        "items": ["React", "Fabric.js", "Yjs", "Socket.io-client"]
+      },
+      {
+        "category": "backend",
+        "items": ["Node.js", "Socket.io", "Redis", "MongoDB"]
+      }
+    ],
+    "architecture": {
+      "diagram": "graph TD\n    A[客户端 A] -->|WebSocket| B[Socket.io Server]\n    C[客户端 B] -->|WebSocket| B\n    D[客户端 C] -->|WebSocket| B\n    B --> E[Yjs 协同引擎]\n    E --> F[Redis Pub/Sub]\n    E --> G[(MongoDB)]\n    B --> H[WebRTC 信令]",
+      "description": "使用 Yjs CRDT 算法实现无冲突的实时协作，Socket.io 处理实时通信，Redis Pub/Sub 支持多服务器部署。"
+    },
+    "myRole": "全栈开发工程师",
+    "contributions": [
+      "实现 Canvas 绘图引擎核心功能",
+      "集成 Yjs 实现实时协同编辑",
+      "优化大规模场景下的渲染性能",
+      "实现白板数据的导入导出功能"
+    ],
+    "teamSize": 3,
+    "duration": "2022.08 - 2022.12",
+    "metrics": [
+      {
+        "label": "同步延迟",
+        "value": "50ms",
+        "before": "200ms",
+        "after": "50ms"
+      },
+      {
+        "label": "并发用户数",
+        "value": "1000+",
+        "unit": "人"
+      }
+    ],
+    "challenges": [
+      {
+        "title": "实时协同冲突解决",
+        "description": "多用户同时编辑时可能出现冲突和数据不一致",
+        "solution": "使用 Yjs CRDT 算法保证最终一致性，实现无冲突的实时协同编辑",
+        "technologies": ["Yjs", "CRDT", "Operational Transformation"]
+      },
+      {
+        "title": "大规模画布渲染性能",
+        "description": "画布元素过多时页面卡顿，影响用户体验",
+        "solution": "实现视口裁剪、分层渲染、对象池等技术优化渲染性能",
+        "technologies": ["Canvas API", "Viewport Culling", "Object Pooling"]
+      }
+    ]
   }
 ]

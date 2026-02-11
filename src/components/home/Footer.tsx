@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Github, Twitter, Linkedin, Mail, Heart } from 'lucide-react'
 import { toast } from 'sonner'
+import { OnlineStatusIndicator } from '@/components/common/OnlineStatusIndicator'
 
 const footerLinks = {
   navigation: [
@@ -119,9 +120,13 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="pt-8 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> using React & Tailwind
-          </p>
+          <div className="flex items-center gap-4">
+            <OnlineStatusIndicator />
+            <span className="text-muted-foreground">|</span>
+            <p className="text-sm text-muted-foreground flex items-center gap-1">
+              Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> using React & Tailwind
+            </p>
+          </div>
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} MyBlog. All rights reserved.
           </p>

@@ -1,73 +1,307 @@
-# React + TypeScript + Vite
+# DevFolio Pro - 开发者个人品牌展示平台
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <img src="https://img.shields.io/badge/React-19.2.0-61DAFB?logo=react&logoColor=white" alt="React" />
+  <img src="https://img.shields.io/badge/TypeScript-5.9.3-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-4.1.18-06B6D4?logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Vite-6.0.0-646CFF?logo=vite&logoColor=white" alt="Vite" />
+  <img src="https://img.shields.io/badge/Framer_Motion-12.33.0-0055FF?logo=framer&logoColor=white" alt="Framer Motion" />
+</p>
 
-Currently, two official plugins are available:
+<p align="center">
+  <b>🚀 一款面向现代开发者的专业个人品牌展示平台</b>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p align="center">
+  <a href="#-核心功能">核心功能</a> •
+  <a href="#-技术栈">技术栈</a> •
+  <a href="#-项目结构">项目结构</a> •
+  <a href="#-快速开始">快速开始</a> •
+  <a href="#-功能展示">功能展示</a>
+</p>
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ 核心功能
 
-## Expanding the ESLint configuration
+### 🎯 八大特色功能模块
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| 功能 | 描述 | 技术亮点 |
+|------|------|----------|
+| **📁 项目案例深度展示** | 不只是项目列表，更展示架构图、设计稿、代码片段、性能指标 | 交互式架构图、代码高亮、性能可视化 |
+| **📊 数据可视化仪表盘** | GitHub贡献热力图、技能雷达图、文章趋势分析 | Recharts图表、GitHub Calendar集成 |
+| **⭐ 技术影响力展示** | GitHub Stars趋势、开源贡献统计、技术排名 | 实时数据获取、趋势分析 |
+| **💬 访客互动功能** | Giscus评论系统、文章点赞、社交分享 | GitHub Discussions驱动 |
+| **📄 在线简历生成器** | 多主题简历模板、一键PDF导出、在线分享 | @react-pdf/renderer、响应式设计 |
+| **🟢 实时在线状态** | Spotify音乐状态、编码时长、设备信息展示 | 实时API集成、WebSocket |
+| **🏅 技能认证展示** | 证书徽章墙、进度追踪、验证链接 | 徽章系统、进度可视化 |
+| **🖼️ 作品集画廊** | 瀑布流布局、灯箱查看、分类筛选 | Masonry布局、Lightbox组件 |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🛠️ 附加工具箱
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **CSS动画实验室** - 实时预览和调试CSS动画
+- **SVG编辑器** - 在线SVG编辑和优化
+- **代码游乐场** - Monaco Editor驱动的代码编辑器
+- **正则表达式测试器** - 实时正则匹配测试
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 🏗️ 技术栈
+
+### 前端核心
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                     核心技术栈                               │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ⚛️  React 19          - 最新React版本，并发特性             │
+│  📘  TypeScript 5.9    - 类型安全，大型项目必备              │
+│  🎨  Tailwind CSS 4    - 原子化CSS，快速开发                 │
+│  ⚡  Vite 6            - 极速构建工具                        │
+│  🎭  Framer Motion     - React生态最佳动画库                 │
+│  🗃️  Zustand 5         - 轻量级状态管理                      │
+│  🧩  shadcn/ui         - 高质量可定制组件库                  │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 数据可视化
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Recharts** - React图表库（折线图、柱状图、雷达图、饼图）
+- **react-github-calendar** - GitHub贡献热力图
+- **Three.js + @react-three/fiber** - 3D场景渲染
+- **Mermaid** - 架构图和流程图
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 第三方服务集成
+
+| 服务 | 用途 |
+|------|------|
+| **GitHub API** | 仓库数据、贡献统计、Stars趋势 |
+| **Giscus** | 基于GitHub Discussions的评论系统 |
+| **Spotify API** | 实时音乐播放状态 |
+| **Unsplash** | 高质量图片资源 |
+
+### 特色依赖
+
+```json
+{
+  "动画": ["framer-motion", "gsap", "@gsap/react", "canvas-confetti"],
+  "3D": ["three", "@react-three/fiber", "@react-three/drei"],
+  "粒子效果": ["@tsparticles/react", "@tsparticles/slim"],
+  "PDF生成": ["@react-pdf/renderer"],
+  "代码编辑": ["@monaco-editor/react", "monaco-editor"],
+  "表单处理": ["react-hook-form", "@hookform/resolvers", "zod"],
+  "日期处理": ["date-fns"],
+  "Markdown": ["react-markdown", "react-syntax-highlighter"]
+}
 ```
+
+---
+
+## 📁 项目结构
+
+```
+levy-react-blog/
+├── 📂 public/                 # 静态资源
+│   ├── images/               # 图片资源
+│   └── fonts/                # 字体文件
+│
+├── 📂 src/
+│   ├── 📂 components/        # 组件目录
+│   │   ├── ai/              # AI相关组件
+│   │   ├── blog/            # 博客组件
+│   │   ├── certifications/  # 认证展示组件
+│   │   ├── common/          # 通用组件
+│   │   ├── dashboard/       # 仪表盘组件
+│   │   ├── gallery/         # 画廊组件
+│   │   ├── home/            # 首页组件
+│   │   ├── influence/       # 影响力展示组件
+│   │   ├── interaction/     # 互动功能组件
+│   │   ├── projects/        # 项目展示组件
+│   │   ├── resume/          # 简历组件
+│   │   ├── timeline/        # 时间线组件
+│   │   ├── tools/           # 工具箱组件
+│   │   └── ui/              # UI基础组件(shadcn)
+│   │
+│   ├── 📂 hooks/             # 自定义Hooks
+│   ├── 📂 lib/               # 工具函数
+│   ├── 📂 pages/             # 页面组件
+│   ├── 📂 providers/         # Context Providers
+│   ├── 📂 stores/            # Zustand状态管理
+│   ├── 📂 styles/            # 样式文件
+│   ├── 📂 types/             # TypeScript类型定义
+│   ├── App.tsx               # 应用入口
+│   └── main.tsx              # 渲染入口
+│
+├── 📂 .trae/
+│   └── documents/            # 产品原型文档
+│
+├── index.html
+├── package.json
+├── tailwind.config.ts
+├── tsconfig.json
+└── vite.config.ts
+```
+
+---
+
+## 🚀 快速开始
+
+### 环境要求
+
+- Node.js >= 18.0.0
+- npm >= 9.0.0 或 yarn >= 1.22.0
+
+### 安装依赖
+
+```bash
+npm install
+```
+
+### 开发模式
+
+```bash
+npm run dev
+```
+
+访问 http://localhost:5173
+
+### 构建生产版本
+
+```bash
+npm run build
+```
+
+### 代码检查
+
+```bash
+npm run lint          # 检查代码
+npm run lint:fix      # 自动修复
+npm run type-check    # TypeScript类型检查
+```
+
+### 预览生产构建
+
+```bash
+npm run preview
+```
+
+---
+
+## 🎨 功能展示
+
+### 首页预览
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  [Logo]    Home  Blog  Projects  Dashboard  About  [Theme]  │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│              👋 Hi, I'm Levy                                │
+│         Full Stack Developer                                │
+│                                                             │
+│    [React] [TypeScript] [Node.js] [Three.js]               │
+│                                                             │
+│         [View My Work] [Contact Me]                        │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│  💻 Featured Projects    📊 GitHub Stats                    │
+│  ┌─────────┐ ┌─────────┐    🔥 1,234 contributions          │
+│  │ Project │ │ Project │    ⭐ 500+ Stars                   │
+│  │   1     │ │   2     │    🍴 100+ Forks                   │
+│  └─────────┘ └─────────┘                                   │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 仪表盘预览
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  📊 Dashboard                                                │
+├─────────────────────────────────────────────────────────────┤
+│  ┌─────────┐ ┌─────────┐ ┌─────────┐                       │
+│  │  Posts  │ │  Views  │ │  Likes  │                       │
+│  │   156   │ │  52.3K  │ │  1.2K   │                       │
+│  └─────────┘ └─────────┘ └─────────┘                       │
+│                                                             │
+│  ┌──────────────────┐  ┌──────────────────┐                │
+│  │ GitHub Calendar  │  │ Skills Radar     │                │
+│  │ ■ ■ □ ■ ■ □ ■ ■ │  │      ●───────    │                │
+│  │ ■ □ ■ ■ ■ ■ □ ■ │  │     /│\         │                │
+│  │ □ ■ ■ □ ■ ■ ■ □ │  │ ●──┼──●        │                │
+│  └──────────────────┘  └──────────────────┘                │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 📝 可用脚本
+
+| 命令 | 描述 |
+|------|------|
+| `npm run dev` | 启动开发服务器 |
+| `npm run build` | 构建生产版本 |
+| `npm run build:prod` | 生产模式构建 |
+| `npm run lint` | ESLint代码检查 |
+| `npm run lint:fix` | 自动修复代码问题 |
+| `npm run type-check` | TypeScript类型检查 |
+| `npm run preview` | 预览生产构建 |
+| `npm run deploy` | 部署到生产环境 |
+
+---
+
+## 🎯 项目特色
+
+### 🚀 性能优化
+
+- **首屏加载 < 1.5s** - Vite极速构建 + 代码分割
+- **流畅动画 60fps** - Framer Motion硬件加速
+- **图片懒加载** - 优化首屏渲染
+- **Tree Shaking** - 最小化打包体积
+
+### 🎨 设计系统
+
+- **响应式设计** - 完美适配桌面、平板、手机
+- **深色/浅色主题** - next-themes主题切换
+- **一致的设计语言** - shadcn/ui组件规范
+- **流畅的过渡动画** - 页面切换、元素交互动画
+
+### ♿ 可访问性
+
+- **键盘导航支持**
+- **ARIA标签**
+- **高对比度模式**
+- **屏幕阅读器友好**
+
+---
+
+## 📚 相关文档
+
+- [产品原型文档](./.trae/documents/产品原型文档.md) - 详细的产品设计文档（35,000+字）
+- [React 19 文档](https://react.dev/)
+- [Tailwind CSS 文档](https://tailwindcss.com/)
+- [Vite 文档](https://vitejs.dev/)
+
+---
+
+## 🤝 贡献
+
+欢迎提交 Issue 和 Pull Request！
+
+---
+
+## 📄 许可证
+
+[MIT](./LICENSE)
+
+---
+
+<p align="center">
+  Made with ❤️ by <b>Levy</b>
+</p>
+<p align="center">
+  © 2024-2026 DevFolio Pro. All rights reserved.
+</p>

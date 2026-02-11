@@ -25,6 +25,9 @@ const TodoDetailPage = lazy(() =>
 const ProjectsPage = lazy(() =>
   import('@/pages/ProjectsPage').then(m => ({ default: m.ProjectsPage }))
 )
+const ProjectDetailPage = lazy(() =>
+  import('@/pages/ProjectDetailPage').then(m => ({ default: m.ProjectDetailPage }))
+)
 const AboutPage = lazy(() =>
   import('@/pages/AboutPage').then(m => ({ default: m.AboutPage }))
 )
@@ -66,6 +69,21 @@ const Scene3DBuilderPage = lazy(() =>
   import('@/pages/Scene3DBuilderPage').then(m => ({
     default: m.Scene3DBuilderPage,
   }))
+)
+const DashboardPage = lazy(() =>
+  import('@/pages/DashboardPage').then(m => ({ default: m.DashboardPage }))
+)
+const InfluencePage = lazy(() =>
+  import('@/pages/InfluencePage').then(m => ({ default: m.InfluencePage }))
+)
+const ResumePage = lazy(() =>
+  import('@/pages/ResumePage').then(m => ({ default: m.ResumePage }))
+)
+const CertificationsPage = lazy(() =>
+  import('@/pages/CertificationsPage').then(m => ({ default: m.CertificationsPage }))
+)
+const GalleryPage = lazy(() =>
+  import('@/pages/GalleryPage').then(m => ({ default: m.GalleryPage }))
 )
 
 /**
@@ -150,6 +168,14 @@ function App() {
           }
         />
         <Route
+          path="/projects/:slug"
+          element={
+            <SuspenseRoute>
+              <ProjectDetailPage />
+            </SuspenseRoute>
+          }
+        />
+        <Route
           path="/about"
           element={
             <SuspenseRoute>
@@ -228,6 +254,46 @@ function App() {
           element={
             <SuspenseRoute>
               <Scene3DBuilderPage />
+            </SuspenseRoute>
+          }
+        />
+        <Route
+          path="/dashboard"
+          element={
+            <SuspenseRoute>
+              <DashboardPage />
+            </SuspenseRoute>
+          }
+        />
+        <Route
+          path="/influence"
+          element={
+            <SuspenseRoute>
+              <InfluencePage />
+            </SuspenseRoute>
+          }
+        />
+        <Route
+          path="/resume"
+          element={
+            <SuspenseRoute>
+              <ResumePage />
+            </SuspenseRoute>
+          }
+        />
+        <Route
+          path="/certifications"
+          element={
+            <SuspenseRoute>
+              <CertificationsPage />
+            </SuspenseRoute>
+          }
+        />
+        <Route
+          path="/gallery"
+          element={
+            <SuspenseRoute>
+              <GalleryPage />
             </SuspenseRoute>
           }
         />

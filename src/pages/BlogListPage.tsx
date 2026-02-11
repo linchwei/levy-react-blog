@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Navigation } from '@/components/home/Navigation'
@@ -165,11 +165,16 @@ function BackgroundDecoration() {
 }
 
 export function BlogListPage() {
-  const { setSelectedCategory, setSearchQuery, getFilteredPosts } =
+  const { setSelectedCategory, setSearchQuery, getFilteredPosts, fetchData } =
     useBlogStore()
   const [activeCategory, setActiveCategory] = useState('全部')
   const [searchValue, setSearchValue] = useState('')
   const [isSearchFocused, setIsSearchFocused] = useState(false)
+
+  useEffect(() => {
+    fetchData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const filteredPosts = getFilteredPosts()
 

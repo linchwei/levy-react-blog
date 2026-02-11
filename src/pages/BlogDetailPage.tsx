@@ -7,7 +7,6 @@ import {
   Clock,
   Eye,
   Heart,
-  Share2,
   Tag,
   ChevronRight,
   Copy,
@@ -28,11 +27,13 @@ import { AIChatWidget } from '@/components/ai/AIChatWidget'
 import { ArticleSummary } from '@/components/ai/ArticleSummary'
 import { useArticleSummary } from '@/hooks/useArticleSummary'
 import { ToolboxDropdown } from '@/components/tools/ToolboxDropdown'
+import { InteractionButtons } from '@/components/interaction/InteractionButtons'
+import { GiscusComments } from '@/components/interaction/GiscusComments'
 
 export default function BlogDetailPage() {
   const { slug } = useParams<{ slug: string }>()
   const navigate = useNavigate()
-  const { getPostBySlug, incrementViews, incrementLikes, posts } =
+  const { getPostBySlug, incrementViews, posts } =
     useBlogStore()
   const [copiedCode, setCopiedCode] = useState<string | null>(null)
   const [isDarkMode, setIsDarkMode] = useState(false)
@@ -115,24 +116,6 @@ export default function BlogDetailPage() {
         <Footer />
       </div>
     )
-  }
-
-  const handleShare = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: post.title,
-          text: post.excerpt,
-          url: window.location.href,
-        })
-      } catch (error) {
-        console.log('分享取消')
-      }
-    } else {
-      // 复制链接到剪贴板
-      navigator.clipboard.writeText(window.location.href)
-      // 可以添加toast提示
-    }
   }
 
   return (
@@ -363,25 +346,23 @@ export default function BlogDetailPage() {
                 </div>
               </div>
 
-              {/* Actions */}
-              <div className="mt-8 flex items-center gap-4">
-                <Button
-                  variant="outline"
-                  className="gap-2"
-                  onClick={() => incrementLikes(post.id)}
-                >
-                  <Heart className="w-4 h-4" />
-                  喜欢 ({post.likes})
-                </Button>
-                <Button
-                  variant="outline"
-                  className="gap-2"
-                  onClick={handleShare}
-                >
-                  <Share2 className="w-4 h-4" />
-                  分享
-                </Button>
+              {/* Actions - 互动按钮 */}
+              <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-700">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                  <div>
+                    <h3 className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                      喜欢这篇文章？
+                    </h3>
+                    <InteractionButtons
+                      postId={post.slug}
+                      initialLikes={post.likes}
+                    />
+                  </div>
+                </div>
               </div>
+
+              {/* 评论区 */}
+              <GiscusComments postSlug={post.slug} />
             </motion.article>
 
             {/* Sidebar */}

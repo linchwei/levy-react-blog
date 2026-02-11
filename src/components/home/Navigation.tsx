@@ -22,6 +22,11 @@ const navItems = [
   { label: '项目', href: '/projects' },
   { label: '待办', href: '/todo' },
   { label: '时间线', href: '/timeline' },
+  { label: '仪表盘', href: '/dashboard' },
+  { label: '影响力', href: '/influence' },
+  { label: '认证', href: '/certifications' },
+  { label: '画廊', href: '/gallery' },
+  { label: '简历', href: '/resume' },
   { label: '关于', href: '/about' },
 ]
 

@@ -13,6 +13,7 @@ export function HomePage() {
   const { fetchData, isLoading, error } = useBlogStore()
 
   useEffect(() => {
+    console.log('HomePage mounted, calling fetchData')
     fetchData()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -26,7 +27,7 @@ export function HomePage() {
             transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
             className="w-12 h-12 border-2 border-purple-500 border-t-transparent rounded-full mx-auto mb-4"
           />
-          <p className="text-muted-foreground">加载中...</p>
+          <p className="text-muted-foreground">加载中ing...</p>
         </div>
       </div>
     )
