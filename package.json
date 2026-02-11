@@ -12,7 +12,8 @@
     "preview": "vite preview",
     "preview:dist": "vite preview --outDir dist",
     "deploy:gh-pages": "npm run build && gh-pages -d dist",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "deploy": "./deploy.sh"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
