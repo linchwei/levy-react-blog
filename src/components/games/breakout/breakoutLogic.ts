@@ -109,7 +109,7 @@ export function initializePaddle(config: BreakoutGameConfig = defaultConfig): Pa
  * 创建砖块
  */
 export function createBricks(
-  level: number = 1,
+  _level: number = 1,
   config: BreakoutGameConfig = defaultConfig
 ): Brick[] {
   const bricks: Brick[] = []

@@ -14,7 +14,6 @@ import {
   getAIMove,
   BOARD_SIZE,
   type GomokuState,
-  type Player,
 } from './gomokuLogic'
 
 // Mock localStorage

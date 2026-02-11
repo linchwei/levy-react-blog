@@ -132,11 +132,11 @@ export function slideRowLeft(row: Cell2048[]): { row: Cell2048[]; score: number 
   }
 
   // 再次过滤掉合并产生的 0
-  filtered = filtered.filter(cell => cell !== 0)
+  filtered = filtered.filter((cell): cell is number => cell !== 0)
 
   // 补齐空位
   while (filtered.length < row.length) {
-    filtered.push(null)
+    filtered.push(null as unknown as number)
   }
 
   return { row: filtered, score }

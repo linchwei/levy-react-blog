@@ -37,7 +37,7 @@ const NUMBER_COLORS: Record<number, string> = {
 export function MinesweeperGame({ onWin, onGameOver }: MinesweeperGameProps) {
   const [state, setState] = useState<MinesweeperState>(() => initializeGame('EASY'))
   const [difficulty, setDifficulty] = useState<Difficulty>('EASY')
-  const timerRef = useRef<NodeJS.Timeout | null>(null)
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   // 游戏计时器
   useEffect(() => {

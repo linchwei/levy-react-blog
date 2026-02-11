@@ -6,7 +6,6 @@ import {
   initializeGame,
   revealCell,
   revealCellRecursive,
-  revealAllMines,
   toggleFlag,
   quickReveal,
   checkWin,
@@ -14,9 +13,7 @@ import {
   restartGame,
   changeDifficulty,
   DIFFICULTY_CONFIG,
-  type Board,
   type MinesweeperState,
-  type Difficulty,
 } from './minesweeperLogic'
 
 // Mock localStorage

@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom'
+import { vi } from 'vitest'
 
 // Mock localStorage
 const localStorageMock = {
@@ -12,10 +13,10 @@ Object.defineProperty(window, 'localStorage', {
 })
 
 // Mock requestAnimationFrame
-global.requestAnimationFrame = vi.fn((callback) => {
+globalThis.requestAnimationFrame = vi.fn((callback: FrameRequestCallback) => {
   return setTimeout(callback, 16)
 })
 
-global.cancelAnimationFrame = vi.fn((id) => {
+globalThis.cancelAnimationFrame = vi.fn((id: number) => {
   clearTimeout(id)
 })

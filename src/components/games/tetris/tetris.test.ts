@@ -13,7 +13,6 @@ import {
   movePiece,
   rotatePiece,
   hardDrop,
-  lockCurrentPiece,
   gameStep,
   startGame,
   pauseGame,

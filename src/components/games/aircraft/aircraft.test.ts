@@ -6,7 +6,6 @@ import {
   fireBullet,
   useBomb,
   spawnEnemy,
-  createExplosionParticles,
   gameStep,
   startGame,
   togglePause,

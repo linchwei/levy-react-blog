@@ -16,7 +16,6 @@ import {
   resetGame,
   togglePause,
   defaultConfig,
-  type Direction,
   type SnakeGameState,
 } from './snakeLogic'
 

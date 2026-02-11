@@ -16,7 +16,6 @@ import {
   resetGame,
   continueGame,
   defaultConfig,
-  type Board2048,
   type Game2048State,
 } from './game2048Logic'
 

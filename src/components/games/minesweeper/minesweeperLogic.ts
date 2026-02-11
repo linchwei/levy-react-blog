@@ -160,7 +160,7 @@ export function revealCell(
   }
 
   let newBoard = state.board.map(r => r.map(c => ({ ...c })))
-  let newStatus = state.status
+  let newStatus: GameStatus = state.status
   let newFirstClick = state.firstClick
 
   // 第一次点击时放置地雷
@@ -373,7 +373,7 @@ export function restartGame(state: MinesweeperState): MinesweeperState {
 /**
  * 切换难度
  */
-export function changeDifficulty(state: MinesweeperState, difficulty: Difficulty): MinesweeperState {
+export function changeDifficulty(_state: MinesweeperState, difficulty: Difficulty): MinesweeperState {
   return initializeGame(difficulty)
 }
 

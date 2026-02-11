@@ -29,7 +29,6 @@ export function AircraftGame({ onScoreChange, onGameOver }: AircraftGameProps) {
   const rafRef = useRef<number | null>(null)
   const keysRef = useRef<Record<string, boolean>>({})
   const frameCountRef = useRef(0)
-  const lastFireTimeRef = useRef(0)
 
   const canvasWidth = defaultConfig.canvasWidth
   const canvasHeight = defaultConfig.canvasHeight
@@ -438,7 +437,6 @@ export function AircraftGame({ onScoreChange, onGameOver }: AircraftGameProps) {
         ctx.fill()
       } else {
         // 大型敌机 - B-2幽灵风格轰炸机（紫色）
-        const bodyColor = '#7c3aed'
         const darkColor = '#5b21b6'
         const lightColor = '#a78bfa'
 

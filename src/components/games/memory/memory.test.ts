@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest'
+import { describe, it, expect, beforeEach } from 'vitest'
 import {
   generateId,
   shuffleArray,
@@ -11,8 +11,6 @@ import {
   updateTime,
   calculateFinalScore,
   CARD_ICONS,
-  defaultConfig,
-  type MemoryCard,
   type MemoryGameState,
 } from './memoryLogic'
 

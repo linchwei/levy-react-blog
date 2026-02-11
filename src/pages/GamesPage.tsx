@@ -240,7 +240,7 @@ export function GamesPage() {
               animate="visible"
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             >
-              {games.map((game, index) => (
+              {games.map((game) => (
                 <motion.div key={game.id} variants={itemVariants}>
                   <Link to={game.path}>
                     <Card className="group h-full overflow-hidden hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br hover:scale-[1.02]">

@@ -12,7 +12,6 @@ import {
   resetGame,
   updateTime,
   type MemoryGameState,
-  type MemoryGameConfig,
 } from './memoryLogic'
 
 interface MemoryGameProps {
@@ -23,7 +22,7 @@ interface MemoryGameProps {
 export function MemoryGame({ onScoreChange, onGameOver }: MemoryGameProps) {
   const [state, setState] = useState<MemoryGameState>(() => initializeGame())
   const [isChecking, setIsChecking] = useState(false)
-  const timerRef = useRef<NodeJS.Timeout | null>(null)
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   // 游戏计时器
   useEffect(() => {
