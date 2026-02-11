@@ -1,0 +1,128 @@
+[
+  {
+    "name": "React / Next.js",
+    "level": 95,
+    "category": "frontend",
+    "icon": "react",
+    "description": "精通React生态，深入理解Fiber架构、Hooks原理，熟练使用Next.js进行SSR/SSG开发"
+  },
+  {
+    "name": "TypeScript",
+    "level": 92,
+    "category": "frontend",
+    "icon": "typescript",
+    "description": "类型系统专家，擅长高级类型体操、类型推导、类型安全架构设计"
+  },
+  {
+    "name": "Vue.js / Nuxt",
+    "level": 88,
+    "category": "frontend",
+    "icon": "vue",
+    "description": "深入理解Vue响应式原理，熟练使用Composition API，有大型Vue项目架构经验"
+  },
+  {
+    "name": "Tailwind CSS",
+    "level": 90,
+    "category": "frontend",
+    "icon": "tailwind",
+    "description": "CSS架构专家，擅长设计系统构建、自定义插件开发、性能优化"
+  },
+  {
+    "name": "Node.js",
+    "level": 85,
+    "category": "backend",
+    "icon": "nodejs",
+    "description": "全栈开发能力，熟练使用Express/Nest.js，有大型微服务架构经验"
+  },
+  {
+    "name": "Python",
+    "level": 80,
+    "category": "backend",
+    "icon": "python",
+    "description": "AI开发首选语言，熟练使用FastAPI、Django，有机器学习工程化经验"
+  },
+  {
+    "name": "PostgreSQL / Redis",
+    "level": 78,
+    "category": "backend",
+    "icon": "database",
+    "description": "数据库设计与优化，熟练使用SQL、NoSQL，有分库分表经验"
+  },
+  {
+    "name": "Docker / K8s",
+    "level": 75,
+    "category": "devops",
+    "icon": "docker",
+    "description": "容器化与编排，熟练使用Docker、Kubernetes，有CI/CD流水线搭建经验"
+  },
+  {
+    "name": "AWS / 阿里云",
+    "level": 72,
+    "category": "devops",
+    "icon": "cloud",
+    "description": "云平台架构，熟练使用ECS、OSS、RDS、Lambda等云服务"
+  },
+  {
+    "name": "TensorFlow / PyTorch",
+    "level": 70,
+    "category": "ai",
+    "icon": "brain",
+    "description": "深度学习框架，有模型训练、微调、部署经验，了解Transformer架构"
+  },
+  {
+    "name": "LLM / Prompt Engineering",
+    "level": 85,
+    "category": "ai",
+    "icon": "message-square",
+    "description": "大模型应用专家，精通Prompt Engineering、RAG、Agent设计模式"
+  },
+  {
+    "name": "LangChain / LlamaIndex",
+    "level": 80,
+    "category": "ai",
+    "icon": "link",
+    "description": "LLM应用框架，熟练使用LangChain、LlamaIndex构建AI应用"
+  },
+  {
+    "name": "Figma / UI Design",
+    "level": 88,
+    "category": "design",
+    "icon": "figma",
+    "description": "UI/UX设计，熟练使用Figma、Sketch，有完整设计系统构建经验"
+  },
+  {
+    "name": "Product Management",
+    "level": 75,
+    "category": "product",
+    "icon": "target",
+    "description": "产品思维，擅长需求分析、用户研究、数据驱动决策、PRD撰写"
+  },
+  {
+    "name": "Data Analysis",
+    "level": 70,
+    "category": "product",
+    "icon": "bar-chart",
+    "description": "数据分析，熟练使用SQL、Python进行数据分析，有A/B测试经验"
+  },
+  {
+    "name": "Git / GitHub",
+    "level": 90,
+    "category": "tools",
+    "icon": "git",
+    "description": "版本控制专家，熟练使用Git工作流、Code Review、开源协作"
+  },
+  {
+    "name": "Testing",
+    "level": 82,
+    "category": "tools",
+    "icon": "check-circle",
+    "description": "测试驱动开发，熟练使用Jest、Cypress、Playwright，测试覆盖率90%+"
+  },
+  {
+    "name": "Performance",
+    "level": 88,
+    "category": "tools",
+    "icon": "zap",
+    "description": "性能优化专家，精通Core Web Vitals、代码分割、懒加载、缓存策略"
+  }
+]
