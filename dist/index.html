@@ -4,11 +4,61 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/levy-react-blog/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- 缓存控制 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    
     <title>Levy 的创意实验室 🚀</title>
-    <script type="module" crossorigin src="/levy-react-blog/assets/index-DeSSmPMO.js"></script>
-    <link rel="modulepreload" crossorigin href="/levy-react-blog/assets/vendor-QyoG3HE1.js">
-    <link rel="modulepreload" crossorigin href="/levy-react-blog/assets/ui-DYkYaoix.js">
-    <link rel="modulepreload" crossorigin href="/levy-react-blog/assets/animation-BjUy5Qx7.js">
+    
+    <!-- 清除缓存脚本 -->
+    <script>
+      // 版本号 - 每次构建时更新
+      const BUILD_VERSION = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+      const storedVersion = localStorage.getItem('app_version');
+      
+      // 如果版本不同，清除所有缓存
+      if (storedVersion !== BUILD_VERSION) {
+        // 清除 localStorage（保留版本号）
+        const keys = Object.keys(localStorage);
+        keys.forEach(key => {
+          if (key !== 'app_version') {
+            localStorage.removeItem(key);
+          }
+        });
+        
+        // 清除 sessionStorage
+        sessionStorage.clear();
+        
+        // 存储新版本号
+        localStorage.setItem('app_version', BUILD_VERSION);
+        
+        // 尝试清除 Service Worker 缓存
+        if ('caches' in window) {
+          caches.keys().then(cacheNames => {
+            cacheNames.forEach(cacheName => {
+              caches.delete(cacheName);
+            });
+          });
+        }
+        
+        // 注销 Service Worker
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(registrations => {
+            registrations.forEach(registration => {
+              registration.unregister();
+            });
+          });
+        }
+        
+        console.log('缓存已清除，版本:', BUILD_VERSION);
+      }
+    </script>
+    <script type="module" crossorigin src="/levy-react-blog/assets/index-BpIHfUOh-BpIHfUOh.js"></script>
+    <link rel="modulepreload" crossorigin href="/levy-react-blog/assets/vendor-QyoG3HE1-QyoG3HE1.js">
+    <link rel="modulepreload" crossorigin href="/levy-react-blog/assets/ui-DMLkXmeO-DMLkXmeO.js">
+    <link rel="modulepreload" crossorigin href="/levy-react-blog/assets/animation-CTLyM_LX-CTLyM_LX.js">
     <link rel="stylesheet" crossorigin href="/levy-react-blog/assets/index-WDtBPxk2.css">
   </head>
   <body>
