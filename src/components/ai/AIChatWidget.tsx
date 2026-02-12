@@ -24,6 +24,7 @@ export function AIChatWidget({
 }: AIChatWidgetProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [isConfigured, setIsConfigured] = useState(false)
+  const [isDark, setIsDark] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
 
@@ -41,6 +42,22 @@ export function AIChatWidget({
   // 检查 API 配置
   useEffect(() => {
     setIsConfigured(isAIConfigured())
+  }, [])
+
+  // 检测主题
+  useEffect(() => {
+    const checkTheme = () => {
+      setIsDark(document.documentElement.classList.contains('dark'))
+    }
+    checkTheme()
+    
+    const observer = new MutationObserver(checkTheme)
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    })
+    
+    return () => observer.disconnect()
   }, [])
 
   // 自动滚动到底部
@@ -169,15 +186,21 @@ export function AIChatWidget({
                 </div>
               ) : (
                 <>
-                  {messages.map(message => (
+                  {messages.map((message, index) => (
                     <ChatMessage
                       key={message.id}
-                      role={message.role}
-                      content={message.content}
-                      isLoading={isLoading && message.content === ''}
+                      message={{
+                        id: message.id,
+                        role: message.role,
+                        content: message.content,
+                        timestamp: Date.now(),
+                        isStreaming: isLoading && message.content === '' && index === messages.length - 1,
+                      }}
+                      isDark={isDark}
                       onRegenerate={
                         message.role === 'assistant' ? regenerate : undefined
                       }
+                      isLastMessage={index === messages.length - 1}
                     />
                   ))}
                   <div ref={messagesEndRef} />

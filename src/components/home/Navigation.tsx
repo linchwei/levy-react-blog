@@ -14,6 +14,7 @@ import {
   MousePointer2,
   PenTool,
   Activity,
+  Bot,
 } from 'lucide-react'
 
 const navItems = [
@@ -284,6 +285,35 @@ export function Navigation() {
                 </AnimatePresence>
               </div>
 
+              {/* AI Chat Button */}
+              <Link to="/ai-chat">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className={`relative flex items-center gap-1 ${
+                    location.pathname === '/ai-chat'
+                      ? 'text-foreground'
+                      : 'text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  {location.pathname === '/ai-chat' && (
+                    <motion.div
+                      layoutId="activeNav"
+                      className="absolute inset-0 bg-accent rounded-md"
+                      transition={{
+                        type: 'spring',
+                        bounce: 0.2,
+                        duration: 0.6,
+                      }}
+                    />
+                  )}
+                  <span className="relative z-10 flex items-center gap-1">
+                    <Bot className="w-4 h-4" />
+                    AI 助手
+                  </span>
+                </Button>
+              </Link>
+
               {/* Games Dropdown */}
               <div
                 className="relative"
@@ -422,6 +452,28 @@ export function Navigation() {
                   </Button>
                 </Link>
               ))}
+
+              {/* Mobile AI Chat */}
+              <div className="pt-4 border-t border-border">
+                <Link
+                  to="/ai-chat"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <Button
+                    variant="ghost"
+                    className={`w-full justify-start gap-3 ${
+                      location.pathname === '/ai-chat'
+                        ? 'bg-accent text-foreground'
+                        : 'text-muted-foreground'
+                    }`}
+                  >
+                    <div className="w-6 h-6 rounded bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
+                      <Bot className="w-3 h-3 text-white" />
+                    </div>
+                    AI 助手
+                  </Button>
+                </Link>
+              </div>
 
               {/* Mobile Tools Section */}
               <div className="pt-4 border-t border-border">

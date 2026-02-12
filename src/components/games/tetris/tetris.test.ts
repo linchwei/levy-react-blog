@@ -302,7 +302,8 @@ describe('Tetris Game Logic', () => {
     it('should lock piece when moving down hits bottom', () => {
       state.currentPiece.y = defaultConfig.boardHeight - 2
       const newState = movePiece(state, 0, 1)
-      expect(newState.currentPiece.type).not.toBe(state.currentPiece.type)
+      // When piece is locked, a new piece is spawned at the top
+      expect(newState.currentPiece.y).toBeLessThanOrEqual(1)
     })
   })
 

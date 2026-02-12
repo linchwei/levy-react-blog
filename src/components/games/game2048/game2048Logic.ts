@@ -65,13 +65,17 @@ export const CELL_TEXT_COLORS: Record<number, string> = {
  * 初始化游戏板
  */
 export function createBoard(size: number = defaultConfig.boardSize): Board2048 {
-  return Array(size).fill(null).map(() => Array(size).fill(null))
+  return Array(size)
+    .fill(null)
+    .map(() => Array(size).fill(null))
 }
 
 /**
  * 初始化游戏状态
  */
-export function initializeGame(config: Game2048Config = defaultConfig): Game2048State {
+export function initializeGame(
+  config: Game2048Config = defaultConfig
+): Game2048State {
   let board = createBoard(config.boardSize)
   board = addRandomTile(board)
   board = addRandomTile(board)
@@ -117,7 +121,10 @@ export function addRandomTile(board: Board2048): Board2048 {
 /**
  * 滑动并合并一行（向左）
  */
-export function slideRowLeft(row: Cell2048[]): { row: Cell2048[]; score: number } {
+export function slideRowLeft(row: Cell2048[]): {
+  row: Cell2048[]
+  score: number
+} {
   // 过滤掉空单元格
   let filtered = row.filter(cell => cell !== null) as number[]
   let score = 0
@@ -145,7 +152,10 @@ export function slideRowLeft(row: Cell2048[]): { row: Cell2048[]; score: number 
 /**
  * 滑动并合并一行（向右）
  */
-export function slideRowRight(row: Cell2048[]): { row: Cell2048[]; score: number } {
+export function slideRowRight(row: Cell2048[]): {
+  row: Cell2048[]
+  score: number
+} {
   const reversed = [...row].reverse()
   const { row: slid, score } = slideRowLeft(reversed)
   return { row: slid.reverse(), score }
@@ -161,7 +171,11 @@ export function getColumn(board: Board2048, x: number): Cell2048[] {
 /**
  * 设置列
  */
-export function setColumn(board: Board2048, x: number, column: Cell2048[]): Board2048 {
+export function setColumn(
+  board: Board2048,
+  x: number,
+  column: Cell2048[]
+): Board2048 {
   return board.map((row, y) => {
     const newRow = [...row]
     newRow[x] = column[y]
@@ -249,7 +263,10 @@ export function hasValidMoves(board: Board2048): boolean {
 /**
  * 检查是否获胜
  */
-export function checkWin(board: Board2048, winValue: number = defaultConfig.winValue): boolean {
+export function checkWin(
+  board: Board2048,
+  winValue: number = defaultConfig.winValue
+): boolean {
   return board.some(row => row.some(cell => cell === winValue))
 }
 

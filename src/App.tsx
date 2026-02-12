@@ -3,8 +3,6 @@ import { Routes, Route } from 'react-router-dom'
 import { PageLoader } from '@/components/common/LoadingSpinner'
 import { PageProviders } from '@/providers/AppProviders'
 import { GlobalParticleBackground } from '@/components/common/GlobalParticleBackground'
-import { GlobalAIChat } from '@/components/common/GlobalAIChat'
-
 // ============================================
 // 懒加载页面组件
 // Lazy-loaded page components
@@ -121,6 +119,9 @@ const KlotskiPage = lazy(() =>
 const PinballPage = lazy(() =>
   import('@/pages/PinballPage').then(m => ({ default: m.PinballPage }))
 )
+const AIChatPage = lazy(() =>
+  import('@/pages/AIChatPage').then(m => ({ default: m.AIChatPage }))
+)
 
 /**
  * 带 Suspense 的路由包装器
@@ -143,9 +144,6 @@ function App() {
     <>
       {/* Global Particle Background - Applied to all pages */}
       <GlobalParticleBackground />
-
-      {/* Global AI Chat - Available on all pages */}
-      <GlobalAIChat />
 
       <Routes>
         {/* Home */}
@@ -426,6 +424,14 @@ function App() {
           element={
             <SuspenseRoute>
               <PinballPage />
+            </SuspenseRoute>
+          }
+        />
+        <Route
+          path="/ai-chat"
+          element={
+            <SuspenseRoute>
+              <AIChatPage />
             </SuspenseRoute>
           }
         />
